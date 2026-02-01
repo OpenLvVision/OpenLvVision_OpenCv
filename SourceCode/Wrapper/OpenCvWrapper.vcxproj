@@ -205,6 +205,8 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\PCA\PCA.h" />
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\RNG\RNG.h" />
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.h" />
+    <ClInclude Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.h" />
+    <ClInclude Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.h" />
     <ClInclude Include="Src\CV-Modules\System\System.h" />
     <ClInclude Include="Src\DLL\framework.h" />
     <ClInclude Include="Src\DLL\pch.h" />
@@ -224,6 +226,8 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\PCA\PCA.cpp" />
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\RNG\RNG.cpp" />
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.cpp" />
+    <ClCompile Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.cpp" />
+    <ClCompile Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.cpp" />
     <ClCompile Include="Src\CV-Modules\System\System.cpp" />
     <ClCompile Include="Src\DLL\dllmain.cpp" />
     <ClCompile Include="Src\DLL\pch.cpp" />

@@ -1,0 +1,9 @@
+<p>The function smooths an image using the kernel:</p>
+
+<div>{{< katex >}}$
+\texttt{K} = \frac{1}{\texttt{ksize.width} \cdot \texttt{ksize.height}} \begin{bmatrix} 1 & 1 & 1 & \cdots & 1 & 1 \\ 1 & 1 & 1 & \cdots & 1 & 1 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 1 & 1 & 1 & \cdots & 1 & 1 \end{bmatrix}${{< /katex >}}</div>
+
+<p>The call <code>blur(src, dst, ksize, anchor, borderType)</code> is equivalent to <code>boxFilter(src, dst, src.type(), ksize, anchor, true, borderType)</code>.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#ga8c45db9afe636703801b0b2e440fce37" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

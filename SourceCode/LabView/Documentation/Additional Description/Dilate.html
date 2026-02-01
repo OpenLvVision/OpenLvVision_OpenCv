@@ -1,0 +1,11 @@
+<p>The function dilates the source image using the specified structuring element that determines the shape of a pixel neighborhood over which the maximum is taken:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(x,y) = \max_{(x',y'): \, \texttt{element}(x',y') \neq 0} \texttt{src}(x+x',y+y')
+${{< /katex >}}</div>
+
+
+<p>The function supports the in-place mode. Dilation can be applied several (<code>iterations</code>) times. In case of multi-channel images, each channel is processed independently.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#ga4ff0f3318642c4f469d0e11f242f3b6c" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

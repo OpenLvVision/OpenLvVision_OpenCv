@@ -43,6 +43,15 @@
     <Filter Include="CV-Modules\CoreFunctionality\SVD">
       <UniqueIdentifier>{5a87cfe9-4dd8-41a0-a714-0e92f3843cf3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CV-Modules\ImageProcessing">
+      <UniqueIdentifier>{7f0ff4f8-9dfc-4be2-8946-bea7f174ac7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\ImageProcessing\ImageFiltering">
+      <UniqueIdentifier>{c50175f1-3024-4d95-94eb-7a652f01a7f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\ImageProcessing\ObjectDetection">
+      <UniqueIdentifier>{dbcf028e-ab60-4283-b1b3-5601ca11b878}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\DLL\framework.h">
@@ -96,6 +105,12 @@
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.h">
       <Filter>CV-Modules\CoreFunctionality\SVD</Filter>
     </ClInclude>
+    <ClInclude Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.h">
+      <Filter>CV-Modules\ImageProcessing\ImageFiltering</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.h">
+      <Filter>CV-Modules\ImageProcessing\ObjectDetection</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\DLL\dllmain.cpp">
@@ -130,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.cpp">
       <Filter>CV-Modules\CoreFunctionality\SVD</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.cpp">
+      <Filter>CV-Modules\ImageProcessing\ImageFiltering</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.cpp">
+      <Filter>CV-Modules\ImageProcessing\ObjectDetection</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,0 +1,15 @@
+<p>The function calculates the Laplacian of the source image by adding up the second $x$ and $y$ derivatives calculated using the Sobel operator:</p>
+
+<div>{{< katex >}}$
+\texttt{dst} = \Delta \texttt{src} = \frac{\partial^2 \texttt{src}}{\partial x^2} + \frac{\partial^2 \texttt{src}}{\partial y^2}
+${{< /katex >}}</div>
+
+<p>This is done when <code>ksize > 1</code>. When <code>ksize == 1</code>, the Laplacian is computed by filtering the image with the following $3 \times 3$ aperture:</p>
+
+<div>{{< katex >}}$
+\begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0 \end{bmatrix}
+${{< /katex >}}</div>
+
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#gad78703e4c8fe703d479c1860d76429e6" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

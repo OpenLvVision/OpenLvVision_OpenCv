@@ -36,6 +36,10 @@ The **Mat** type is reconstructed as closely as possible using malleable and pol
     * **SVD:** `SVBackSubst`, `SVDecomp`, `SVD_Compute`, `SVD_SolveZ`
     * **RandomNumber:** `Randn`, `RandShuffle`, `Randu`, `WriteRngSeed`
 
+* 🖼️**Image Processing**
+    * **ImageFiltering** `Bilateralfilter`, `Blur`, `BoxFilter`, `Filter2d`, `GaussianBlur`, `GetDerivKernels`, `GetGaborKernel`, `GetGaussianKernel`, `Laplacian`, `MedianBlur`, `Dilate`, `Erode`, `GetStructuringElement`, `MorphologyDefaultBorderValue`, `MorphologyEx` `PyrDown`, `PyrMeanShiftFiltering`, `PyrUp`, `Scharr`, `SepFilter2D`, `Sobel`, `SpatialGradient`, `SqrBoxFilter`
+    * **ObjectDetection** `MatchTemplate`
+
 * 💻**System**
     * `CheckHardware`, `GetBuildInfos`, `GetNumThreads`, `GetVersion`, `SetNumThreads`
 
@@ -56,7 +60,7 @@ The **Mat** type is reconstructed as closely as possible using malleable and pol
 ### 🖥️ System Requirements
 * **LabVIEW:** 2020 or newer (including the Community Edition)
 * **OS:** Windows operating system
-* **Dependencies:** NI Vision Development Module (license not required)
+* **Dependencies:** NI Vision Development Module (license for development not required)
 
 ---
 

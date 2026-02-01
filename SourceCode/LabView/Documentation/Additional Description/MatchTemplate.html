@@ -1,0 +1,7 @@
+<p>The function slides through image , compares the overlapped patches of size $w \times h$ against templ using the specified method and stores the comparison results in result . TemplateMatchModes describes the formulae for the available comparison methods ($I$ denotes image, $T$ template, $R$ result, $M$ the optional mask ). The summation is done over template and/or the image patch: $x' = 0 \dots w-1, y' = 0 \dots h-1$</p>
+
+<p>After the function finishes the comparison, the best matches can be found as global minimums (when <code>TM_SQDIFF</code> was used) or maximums (when <code>TM_CCORR</code> or <code>TM_CCOEFF</code> was used) using the <code>minMaxLoc</code> function. In case of a color image, template summation in the numerator and each sum in the denominator is done over all of the channels and separate mean values are used for each channel. That is, the function can take a color template and a color image. The result will still be a single-channel image, which is easier to analyze.</p>
+
+
+<p><a
+href="https://docs.opencv.org/4.11.0/df/dfb/group__imgproc__object.html#ga586ebfb0a7fb604b35a23d85391329be" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

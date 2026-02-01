@@ -1,0 +1,32 @@
+<p>In all cases except one, the $\texttt{ksize} \times \texttt{ksize}$ separable kernel is used to calculate the derivative. When $\texttt{ksize} = 1$, the $3 \times 1$ or $1 \times 3$ kernel is used (that is, no Gaussian smoothing is done). <code>ksize = 1</code> can only be used for the first or the second $x$- or $y$- derivatives.</p>
+
+<p>There is also the special value <code>ksize = FILTER_SCHARR (-1)</code> that corresponds to the $3 \times 3$ Scharr filter that may give more accurate results than the $3 \times 3$ Sobel. The Scharr aperture for the $x$-derivative is:</p>
+
+<div>{{< katex >}}$
+\begin{bmatrix} -3 & 0 & 3 \\ -10 & 0 & 10 \\ -3 & 0 & 3 \end{bmatrix}
+${{< /katex >}}</div>
+
+<p>or transposed for the $y$-derivative.</p>
+
+<p>The function calculates an image derivative by convolving the image with the appropriate kernel:</p>
+
+<div>{{< katex >}}$
+\texttt{dst} = \frac{\partial^{xorder+yorder} \texttt{src}}{\partial x^{xorder} \partial y^{yorder}}
+${{< /katex >}}</div>
+
+
+
+<p>The Sobel operators combine Gaussian smoothing and differentiation, so the result is more or less resistant to noise. Most often, the function is called with (<code>xorder = 1</code>, <code>yorder = 0</code>, <code>ksize = 3</code>) or (<code>xorder = 0</code>, <code>yorder = 1</code>, <code>ksize = 3</code>) to calculate the first $x$- or $y$- image derivative.</p>
+
+<p>The first case (x-derivative) corresponds to a kernel of:</p>
+<div>{{< katex >}}$
+\begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix}
+${{< /katex >}}</div>
+
+<p>The second case (y-derivative) corresponds to a kernel of:</p>
+<div>{{< katex >}}$
+\begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}
+${{< /katex >}}</div>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#gacea54f142e81b6758cb6f375ce782c8d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

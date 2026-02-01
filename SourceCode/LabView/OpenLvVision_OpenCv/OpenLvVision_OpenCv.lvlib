@@ -41,6 +41,12 @@
 		<Item Name="RotateFlags.ctl" Type="VI" URL="../TypeDef/RotateFlags.ctl"/>
 		<Item Name="SVDFlags.ctl" Type="VI" URL="../TypeDef/SVDFlags.ctl"/>
 		<Item Name="CpuFeatures.ctl" Type="VI" URL="../TypeDef/CpuFeatures.ctl"/>
+		<Item Name="AlgorithmHint.ctl" Type="VI" URL="../TypeDef/AlgorithmHint.ctl"/>
+		<Item Name="MorphShapes.ctl" Type="VI" URL="../TypeDef/MorphShapes.ctl"/>
+		<Item Name="MorphTypes.ctl" Type="VI" URL="../TypeDef/MorphTypes.ctl"/>
+		<Item Name="TermType.ctl" Type="VI" URL="../TypeDef/TermType.ctl"/>
+		<Item Name="TermCriteria.ctl" Type="VI" URL="../TypeDef/TermCriteria.ctl"/>
+		<Item Name="TemplateMatchModes.ctl" Type="VI" URL="../TypeDef/TemplateMatchModes.ctl"/>
 	</Item>
 	<Item Name="LvHelpers" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
@@ -509,8 +515,12 @@
 				<Item Name="AssertComplex_2DArray-CSG.vi" Type="VI" URL="../_LvHelpers/Assert/AssertComplex/AssertComplex_2DArray-CSG.vi"/>
 				<Item Name="AssertComplex_2DArray-CDB.vi" Type="VI" URL="../_LvHelpers/Assert/AssertComplex/AssertComplex_2DArray-CDB.vi"/>
 			</Item>
+			<Item Name="AssertPoint" Type="Folder">
+				<Item Name="Assert2dPointI32.vi" Type="VI" URL="../_LvHelpers/Assert/AssertPoint/Assert2dPointI32.vi"/>
+			</Item>
 			<Item Name="AssertImage.vi" Type="VI" URL="../_LvHelpers/Assert/AssertImage.vi"/>
 			<Item Name="AssertAnything.vi" Type="VI" URL="../_LvHelpers/Assert/AssertAnything.vi"/>
+			<Item Name="AssertBool.vi" Type="VI" URL="../_LvHelpers/Assert/AssertBool.vi"/>
 		</Item>
 		<Item Name="Dlls" Type="Folder">
 			<Item Name="opencv_world4110.dll" Type="Document" URL="../Dlls/opencv_world4110.dll"/>
@@ -681,6 +691,40 @@
 			<Item Name="SVDCompute.vim" Type="VI" URL="../CoreFunctionality/SVD/SVDCompute.vim"/>
 			<Item Name="SVDecomp.vim" Type="VI" URL="../CoreFunctionality/SVD/SVDecomp.vim"/>
 			<Item Name="SVDSolveZ.vim" Type="VI" URL="../CoreFunctionality/SVD/SVDSolveZ.vim"/>
+		</Item>
+	</Item>
+	<Item Name="ImageProcessing" Type="Folder">
+		<Item Name="ImageFiltering" Type="Folder">
+			<Item Name="Morphology" Type="Folder">
+				<Item Name="Dilate.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Morphology/Dilate.vim"/>
+				<Item Name="Erode.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Morphology/Erode.vim"/>
+				<Item Name="MorphologyDefaultBorderValue.vi" Type="VI" URL="../ImageProcessing/ImageFiltering/Morphology/MorphologyDefaultBorderValue.vi"/>
+				<Item Name="MorphologyEx.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Morphology/MorphologyEx.vim"/>
+				<Item Name="GetStructuringElement.vi" Type="VI" URL="../ImageProcessing/ImageFiltering/Morphology/GetStructuringElement.vi"/>
+			</Item>
+			<Item Name="Pyramid" Type="Folder">
+				<Item Name="PyrDown.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Pyramid/PyrDown.vim"/>
+				<Item Name="PyrMeanShiftFiltering.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Pyramid/PyrMeanShiftFiltering.vim"/>
+				<Item Name="PyrUp.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Pyramid/PyrUp.vim"/>
+			</Item>
+			<Item Name="BilateralFilter.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/BilateralFilter.vim"/>
+			<Item Name="Blur.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Blur.vim"/>
+			<Item Name="BoxFilter.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/BoxFilter.vim"/>
+			<Item Name="Filter2D.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Filter2D.vim"/>
+			<Item Name="GaussianBlur.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/GaussianBlur.vim"/>
+			<Item Name="GetDerivKernels.vi" Type="VI" URL="../ImageProcessing/ImageFiltering/GetDerivKernels.vi"/>
+			<Item Name="GetGaborKernel.vi" Type="VI" URL="../ImageProcessing/ImageFiltering/GetGaborKernel.vi"/>
+			<Item Name="GetGaussianKernel.vi" Type="VI" URL="../ImageProcessing/ImageFiltering/GetGaussianKernel.vi"/>
+			<Item Name="Laplacian.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Laplacian.vim"/>
+			<Item Name="MedianBlur.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/MedianBlur.vim"/>
+			<Item Name="Scharr.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Scharr.vim"/>
+			<Item Name="SepFilter2D.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/SepFilter2D.vim"/>
+			<Item Name="Sobel.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/Sobel.vim"/>
+			<Item Name="SpatialGradient.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/SpatialGradient.vim"/>
+			<Item Name="SqrBoxFilter.vim" Type="VI" URL="../ImageProcessing/ImageFiltering/SqrBoxFilter.vim"/>
+		</Item>
+		<Item Name="ObjectDetection" Type="Folder">
+			<Item Name="MatchTemplate.vim" Type="VI" URL="../ImageProcessing/ObjectDetection/MatchTemplate.vim"/>
 		</Item>
 	</Item>
 	<Item Name="System" Type="Folder">

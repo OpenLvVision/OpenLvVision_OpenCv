@@ -1,0 +1,16 @@
+<p>The function smooths an image using the kernel:</p>
+
+<div>{{< katex >}}$
+\texttt{K} = \alpha \begin{bmatrix} 1 & 1 & 1 & \cdots & 1 & 1 \\ 1 & 1 & 1 & \cdots & 1 & 1 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 1 & 1 & 1 & \cdots & 1 & 1 \end{bmatrix}
+${{< /katex >}}</div>
+
+<p>where</p>
+
+<div>{{< katex >}}$
+\alpha = \begin{cases} \frac{1}{\texttt{ksize.width} \cdot \texttt{ksize.height}} & \text{when } \texttt{normalize=true} \\ 1 & \text{otherwise} \end{cases}
+${{< /katex >}}</div>
+
+
+<p>Unnormalized box filter is useful for computing various integral characteristics over each pixel neighborhood, such as covariance matrices of image derivatives (used in dense optical flow algorithms, and so on). If you need to compute pixel sums over variable-size windows, use <code>integral</code>.</p>
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#gad533230ebf2d42509547d514f7d3fbc3" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

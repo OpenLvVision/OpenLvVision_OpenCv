@@ -1,0 +1,24 @@
+<p>The function implements the filtering stage of meanshift segmentation, that is, the output of the function is the filtered "posterized" image with color gradients and fine-grain texture flattened. At every pixel $(X,Y)$ of the input image (or down-sized input image, see below) the function executes meanshift iterations, that is, the pixel $(X,Y)$ neighborhood in the joint space-color hyperspace is considered:</p>
+
+<div>{{< katex >}}$
+(x,y): X-\texttt{sp} \le x \le X+\texttt{sp}, Y-\texttt{sp} \le y \le Y+\texttt{sp}, \|(R,G,B)-(r,g,b)\| \le \texttt{sr}
+${{< /katex >}}</div>
+
+<p>where $(R,G,B)$ and $(r,g,b)$ are the vectors of color components at $(X,Y)$ and $(x,y)$, respectively (though, the algorithm does not depend on the color space used, so any 3-component color space can be used instead). Over the neighborhood the average spatial value $(X',Y')$ and average color vector $(R',G',B')$ are found and they act as the neighborhood center on the next iteration:</p>
+
+<div>{{< katex >}}$
+(X,Y) \sim (X',Y'), (R,G,B) \sim (R',G',B')
+${{< /katex >}}</div>
+
+
+
+<p>After the iterations over, the color components of the initial pixel (that is, the pixel from where the iterations started) are set to the final value (average color at the last iteration):</p>
+
+<div>{{< katex >}}$
+I(X,Y) \leftarrow (R^*,G^*,B^*)
+${{< /katex >}}</div>
+
+<p>When <code>maxLevel > 0</code>, the gaussian pyramid of <code>maxLevel+1</code> levels is built, and the above procedure is run on the smallest layer first. After that, the results are propagated to the larger layer and the iterations are run again only on those pixels where the layer colors differ by more than <code>sr</code> from the lower-resolution layer of the pyramid. That makes boundaries of color regions sharper. Note that the results will be actually different from the ones obtained by running the meanshift procedure on the whole original image (i.e. when <code>maxLevel==0</code>).</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#ga9fabdce9543bd602445f5db3827e4cc0" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

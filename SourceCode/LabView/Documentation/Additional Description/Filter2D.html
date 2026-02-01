@@ -1,0 +1,15 @@
+<p>The function applies an arbitrary linear filter to an image. In-place operation is supported. When the aperture is partially outside the image, the function interpolates outlier pixel values according to the specified border mode.</p>
+
+<p>The function does actually compute correlation, not the convolution:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(x,y) = \sum_{\substack{0 \leq x' < \texttt{kernel.cols} \\ 0 \leq y' < \texttt{kernel.rows}}} \texttt{kernel}(x',y') \cdot \texttt{src}(x + x' - \texttt{anchor.x}, y + y' - \texttt{anchor.y})
+${{< /katex >}}</div>
+
+
+<p>That is, the kernel is not mirrored around the anchor point. If you need a real convolution, flip the kernel using <code>flip</code> and set the new anchor to <code>(kernel.cols - anchor.x - 1, kernel.rows - anchor.y - 1)</code>.</p>
+
+<p>The function uses the DFT-based algorithm in case of sufficiently large kernels ($\sim 11 \times 11$ or larger) and the direct algorithm for small kernels.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#ga27c049795ce870216ddfb366086b5a04" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

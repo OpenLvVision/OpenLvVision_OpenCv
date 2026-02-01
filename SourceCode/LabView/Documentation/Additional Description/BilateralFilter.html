@@ -1,0 +1,11 @@
+<p>The function applies bilateral filtering to the input image, as described in <a href="http://www.dai.ed.ac.uk/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html" target="_blank">http://www.dai.ed.ac.uk/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html</a>.</p>
+
+<p><code>bilateralFilter</code> can reduce unwanted noise very well while keeping edges fairly sharp. However, it is very slow compared to most filters.</p>
+
+<ul>
+  <li><strong>Sigma values</strong>: For simplicity, you can set the 2 sigma values to be the same. If they are small ($< 10$), the filter will not have much effect, whereas if they are large ($> 150$), they will have a very strong effect, making the image look "cartoonish".</li>
+  <li><strong>Filter size</strong>: Large filters ($d > 5$) are very slow, so it is recommended to use $d=5$ for real-time applications, and perhaps $d=9$ for offline applications that need heavy noise filtering.</li>
+</ul>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#ga9d7064d478c95d60003cf839430737ed" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

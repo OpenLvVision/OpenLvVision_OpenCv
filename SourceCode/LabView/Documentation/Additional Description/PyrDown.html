@@ -1,0 +1,19 @@
+<p>By default, size of the output image is computed as <code>Size((src.cols+1)/2, (src.rows+1)/2)</code>, but in any case, the following conditions should be satisfied:</p>
+
+<div>{{< katex >}}$
+\begin{aligned}
+| \texttt{dstsize.width} \cdot 2 - \texttt{src.cols} | &\leq 2 \\
+| \texttt{dstsize.height} \cdot 2 - \texttt{src.rows} | &\leq 2
+\end{aligned}
+${{< /katex >}}</div>
+
+<p>The function performs the downsampling step of the Gaussian pyramid construction. First, it convolves the source image with the kernel:</p>
+
+<div>{{< katex >}}$
+\frac{1}{256} \begin{bmatrix} 1 & 4 & 6 & 4 & 1 \\ 4 & 16 & 24 & 16 & 4 \\ 6 & 24 & 36 & 24 & 6 \\ 4 & 16 & 24 & 16 & 4 \\ 1 & 4 & 6 & 4 & 1 \end{bmatrix}
+${{< /katex >}}</div>
+
+
+<p>Then, it downsamples the image by rejecting even rows and columns.</p>
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#gaf9bba239dfca11654cb7f50f889fc2ff" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

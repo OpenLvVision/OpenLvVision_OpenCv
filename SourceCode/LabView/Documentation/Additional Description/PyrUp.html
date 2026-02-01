@@ -1,0 +1,13 @@
+<p>By default, size of the output image is computed as <code>Size(src.cols*2, src.rows*2)</code>, but in any case, the following conditions should be satisfied:</p>
+
+<div>{{< katex >}}$
+\begin{aligned} 
+| \texttt{dstsize.width} - \texttt{src.cols} \cdot 2 | &\leq (\texttt{dstsize.width} \bmod 2) \\ 
+| \texttt{dstsize.height} - \texttt{src.rows} \cdot 2 | &\leq (\texttt{dstsize.height} \bmod 2) 
+\end{aligned}
+${{< /katex >}}</div>
+
+<p>The function performs the upsampling step of the Gaussian pyramid construction, though it can actually be used to construct the Laplacian pyramid. First, it upsamples the source image by injecting even zero rows and columns and then convolves the result with the same kernel as in <code>pyrDown</code> multiplied by 4.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#gada75b59bdaaca411ed6fee10085eb784" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

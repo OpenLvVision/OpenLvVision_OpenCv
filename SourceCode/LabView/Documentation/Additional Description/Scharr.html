@@ -1,0 +1,16 @@
+<p>The function computes the first $x$- or $y$- spatial image derivative using the Scharr operator. The call:</p>
+
+<div>{{< katex >}}$
+\texttt{Scharr(src, dst, ddepth, dx, dy, scale, delta, borderType)}
+${{< /katex >}}</div>
+
+<p>is equivalent to:</p>
+
+<div>{{< katex >}}$
+\texttt{Sobel(src, dst, ddepth, dx, dy, FILTER\_SCHARR, scale, delta, borderType)}
+${{< /katex >}}</div>
+
+<p>The Scharr operator is typically more accurate than the Sobel operator for calculating gradients, especially for $3 \times 3$ kernels.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d4/d86/group__imgproc__filter.html#gaa13106761eedf14798f37aa2d60404c9" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
