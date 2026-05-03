@@ -30,10 +30,11 @@
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 				<Item Name="Color (U64)" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/Color (U64)"/>
-				<Item Name="ControlRefs.ctl" Type="VI" URL="/&lt;vilib&gt;/OpenLvVision/OpenLvVision_OpenCv/Installer/ControlRefs.ctl"/>
+				<Item Name="Create Directory Recursive.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Create Directory Recursive.vi"/>
+				<Item Name="Delimited String to 1D String Array.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Delimited String to 1D String Array.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="Escape Characters for HTTP.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Escape Characters for HTTP.vi"/>
 				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
-				<Item Name="FileElement.ctl" Type="VI" URL="/&lt;vilib&gt;/OpenLvVision/OpenLvVision_OpenCv/Installer/FileElement.ctl"/>
 				<Item Name="Get File Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get File Extension.vi"/>
 				<Item Name="Image Type" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/Image Type"/>
 				<Item Name="Image Unit" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/Image Unit"/>
@@ -48,14 +49,25 @@
 				<Item Name="IMAQ Read Custom Data" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Read Custom Data"/>
 				<Item Name="IMAQ SetImageSize" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ SetImageSize"/>
 				<Item Name="IMAQ Write Custom Data" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Write Custom Data"/>
-				<Item Name="InstallerMain.vi" Type="VI" URL="/&lt;vilib&gt;/OpenLvVision/OpenLvVision_OpenCv/Installer/InstallerMain.vi"/>
+				<Item Name="LabVIEWHTTPClient.lvlib" Type="Library" URL="/&lt;vilib&gt;/httpClient/LabVIEWHTTPClient.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_Matrix.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/Matrix/NI_Matrix.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="NI_Unzip.lvlib" Type="Library" URL="/&lt;vilib&gt;/zip/NI_Unzip.lvlib"/>
+				<Item Name="OLV_InstallerOpenCV.lvlib" Type="Library" URL="/&lt;vilib&gt;/OpenLvVision/OpenLvVision_OpenCv/Installer/OLV_InstallerOpenCV.lvlib"/>
 				<Item Name="OLV_VisionCore_AVX2_X64.dll" Type="Document" URL="/&lt;vilib&gt;/OpenLvVision/OpenLvVision_Image/DLLs/OLV_VisionCore_AVX2_X64.dll"/>
 				<Item Name="OLV_VisionCore_AVX2_X86.dll" Type="Document" URL="/&lt;vilib&gt;/OpenLvVision/OpenLvVision_Image/DLLs/OLV_VisionCore_AVX2_X86.dll"/>
+				<Item Name="Open URL in Default Browser (path).vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser (path).vi"/>
+				<Item Name="Open URL in Default Browser (string).vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser (string).vi"/>
+				<Item Name="Open URL in Default Browser core.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser core.vi"/>
+				<Item Name="Open URL in Default Browser.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/browser.llb/Open URL in Default Browser.vi"/>
+				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
+				<Item Name="Path to URL inner.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Path to URL inner.vi"/>
+				<Item Name="Path to URL.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Path to URL.vi"/>
+				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 			</Item>
 			<Item Name="cublas64_12.dll" Type="Document" URL="cublas64_12.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -66,14 +78,22 @@
 			<Item Name="cudart64_12.dll" Type="Document" URL="cudart64_12.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="cudnn64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn64_9.dll"/>
+			<Item Name="cudnn64_9.dll" Type="Document" URL="cudnn64_9.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="cudnn_adv64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_adv64_9.dll"/>
-			<Item Name="cudnn_cnn64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_cnn64_9.dll"/>
+			<Item Name="cudnn_cnn64_9.dll" Type="Document" URL="cudnn_cnn64_9.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="cudnn_engines_precompiled64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_engines_precompiled64_9.dll"/>
 			<Item Name="cudnn_engines_runtime_compiled64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_engines_runtime_compiled64_9.dll"/>
-			<Item Name="cudnn_graph64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_graph64_9.dll"/>
+			<Item Name="cudnn_graph64_9.dll" Type="Document" URL="cudnn_graph64_9.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="cudnn_heuristic64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_heuristic64_9.dll"/>
-			<Item Name="cudnn_ops64_9.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/cudnn_ops64_9.dll"/>
+			<Item Name="cudnn_ops64_9.dll" Type="Document" URL="cudnn_ops64_9.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="cufft64_11.dll" Type="Document" URL="cufft64_11.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -149,8 +169,12 @@
 			<Item Name="nvrtc64_120_0.dll" Type="Document" URL="nvrtc64_120_0.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="opencv_world4130.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/opencv_world4130.dll"/>
-			<Item Name="openvino.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino.dll"/>
+			<Item Name="opencv_world4130.dll" Type="Document" URL="opencv_world4130.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="openvino.dll" Type="Document" URL="openvino.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="openvino_auto_batch_plugin.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino_auto_batch_plugin.dll"/>
 			<Item Name="openvino_auto_plugin.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino_auto_plugin.dll"/>
 			<Item Name="openvino_c.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino_c.dll"/>
@@ -163,7 +187,9 @@
 			<Item Name="openvino_paddle_frontend.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino_paddle_frontend.dll"/>
 			<Item Name="openvino_pytorch_frontend.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino_pytorch_frontend.dll"/>
 			<Item Name="openvino_tensorflow_frontend.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/openvino_tensorflow_frontend.dll"/>
-			<Item Name="tbb12.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/tbb12.dll"/>
+			<Item Name="tbb12.dll" Type="Document" URL="tbb12.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="tbbbind_2_5.dll" Type="Document" URL="../OpenLvVision_OpenCv/Dlls/tbbbind_2_5.dll"/>
 			<Item Name="tbbmalloc.dll" Type="Document" URL="tbbmalloc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>

@@ -1,0 +1,17 @@
+<p>The function <code>warpPerspective</code> transforms the source image using the specified matrix:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(x,y) =
+\texttt{src}\!\left(
+\frac{M_{11}x + M_{12}y + M_{13}}{M_{31}x + M_{32}y + M_{33}},\;
+\frac{M_{21}x + M_{22}y + M_{23}}{M_{31}x + M_{32}y + M_{33}}
+\right)
+${{< /katex >}}</div>
+
+<p>
+This formula is used when the flag <code>WARP_INVERSE_MAP</code> is set. Otherwise, the transformation matrix is first inverted using <code>invert</code> and then applied.
+</p>
+
+<p>The function cannot operate in-place.</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#gaf73673a7e8e18ec6963e3774e6a94b87" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 

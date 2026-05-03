@@ -1,0 +1,72 @@
+<p>The function transforms the source image using the following mapping:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(\rho,\phi) = \texttt{src}(x,y)
+${{< /katex >}}</div>
+
+<p>where</p>
+
+<div>{{< katex >}}$
+\begin{aligned}
+\vec{I} &= (x - \texttt{center.x},\; y - \texttt{center.y}) \\
+\phi &= K_{\text{angle}} \cdot \texttt{angle}(\vec{I}) \\
+\rho &=
+\begin{cases}
+K_{\text{lin}} \cdot \texttt{magnitude}(\vec{I}), & \text{default} \\
+K_{\text{log}} \cdot \log_e(\texttt{magnitude}(\vec{I})), & \text{if semilog}
+\end{cases}
+\end{aligned}
+${{< /katex >}}</div>
+
+<p>and</p>
+
+<div>{{< katex >}}$
+\begin{aligned}
+K_{\text{angle}} &= \frac{\texttt{dsize.height}}{2\pi} \\
+K_{\text{lin}} &= \frac{\texttt{dsize.width}}{\texttt{maxRadius}} \\
+K_{\text{log}} &= \frac{\texttt{dsize.width}}{\log_e(\texttt{maxRadius})}
+\end{aligned}
+${{< /katex >}}</div>
+
+<p><strong>Linear vs semilog mapping</strong></p>
+
+<p>
+Polar mapping can be linear or semi-log. Add one of <code>WarpPolarMode</code> to the flags to specify the mapping mode.
+Linear mapping is the default.
+</p>
+
+<p>
+The semilog mapping emulates human “foveal” vision, providing high acuity near the center and lower acuity in the periphery.
+</p>
+
+<p><strong>Output image size rules:</strong></p>
+
+<ul>
+  <li><strong>If both values in <code>dsize ≤ 0</code> (default):</strong></li>
+</ul>
+
+<div>{{< katex >}}$
+\begin{aligned}
+\texttt{dsize.area} &\leftarrow \texttt{maxRadius}^2 \cdot \pi \\
+\texttt{dsize.width} &= \texttt{cvRound}(\texttt{maxRadius}) \\
+\texttt{dsize.height} &= \texttt{cvRound}(\texttt{maxRadius} \cdot \pi)
+\end{aligned}
+${{< /katex >}}</div>
+
+<ul>
+  <li><strong>If only <code>dsize.height ≤ 0</code>:</strong></li>
+</ul>
+
+<div>{{< katex >}}$
+\texttt{dsize.height} = \texttt{cvRound}(\texttt{dsize.width} \cdot \pi)
+${{< /katex >}}</div>
+
+<ul>
+  <li><strong>If both values in <code>dsize > 0</code>:</strong></li>
+</ul>
+
+<p>
+The destination image will have the specified size, and the bounding circle area is scaled accordingly.
+</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga49481ab24fdaa0ffa4d3e63d14c0d5e4" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 

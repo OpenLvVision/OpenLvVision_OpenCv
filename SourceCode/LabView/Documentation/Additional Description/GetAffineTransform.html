@@ -1,0 +1,25 @@
+<p>The function calculates a <code>2 × 3</code> affine transformation matrix such that:</p>
+
+<div>{{< katex >}}$
+\begin{bmatrix}
+x'_i \\
+y'_i
+\end{bmatrix}
+=
+\texttt{map\_matrix}
+\cdot
+\begin{bmatrix}
+x_i \\
+y_i \\
+1
+\end{bmatrix}
+${{< /katex >}}</div>
+
+<p>where</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(i) = (x'_i, y'_i), \quad
+\texttt{src}(i) = (x_i, y_i), \quad i = 0,1,2
+${{< /katex >}}</div>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga8f6d378f9f8eebb5cb55cd3ae295a999" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 

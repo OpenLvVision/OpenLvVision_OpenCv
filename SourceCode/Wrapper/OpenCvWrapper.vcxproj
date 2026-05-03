@@ -208,6 +208,9 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClInclude Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.h" />
     <ClInclude Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.h" />
     <ClInclude Include="Src\CV-Modules\System\System.h" />
+    <ClInclude Include="Src\CV-Modules\VideoIO\VideoCapture\VideoCapture.h" />
+    <ClInclude Include="Src\CV-Modules\VideoIO\VideoIO.h" />
+    <ClInclude Include="Src\CV-Modules\VideoIO\VideoWriter\VideoWriter.h" />
     <ClInclude Include="Src\DLL\framework.h" />
     <ClInclude Include="Src\DLL\pch.h" />
     <ClInclude Include="Src\Interorp\ArrayHandling\Array1D.hpp" />
@@ -234,6 +237,9 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClCompile Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.cpp" />
     <ClCompile Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.cpp" />
     <ClCompile Include="Src\CV-Modules\System\System.cpp" />
+    <ClCompile Include="Src\CV-Modules\VideoIO\VideoCapture\VideoCapture.cpp" />
+    <ClCompile Include="Src\CV-Modules\VideoIO\VideoIO.cpp" />
+    <ClCompile Include="Src\CV-Modules\VideoIO\VideoWriter\VideoWriter.cpp" />
     <ClCompile Include="Src\DLL\dllmain.cpp" />
     <ClCompile Include="Src\DLL\pch.cpp" />
     <ClCompile Include="Src\Interorp\ErrorHandling\ErrorHandling.cpp" />

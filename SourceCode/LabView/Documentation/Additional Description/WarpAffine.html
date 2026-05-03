@@ -1,0 +1,17 @@
+<p>The function <code>warpAffine</code> transforms the source image using the specified matrix:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}(x,y) =
+\texttt{src}\!\big(
+\texttt{M}_{11}x + \texttt{M}_{12}y + \texttt{M}_{13},\;
+\texttt{M}_{21}x + \texttt{M}_{22}y + \texttt{M}_{23}
+\big)
+${{< /katex >}}</div>
+
+<p>
+This formula is used when the flag <code>WARP_INVERSE_MAP</code> is set. Otherwise, the transformation matrix is first inverted using <code>invertAffineTransform</code> and then applied.
+</p>
+
+<p>The function cannot operate in-place.</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga0203d9ee5fcd28d40dbc4a1ea4451983" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 

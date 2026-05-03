@@ -67,6 +67,15 @@
     <Filter Include="CV-Modules\DNN\Blob">
       <UniqueIdentifier>{613b98cb-f485-4c0d-aa2c-9efbafbbc9f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CV-Modules\Video IO">
+      <UniqueIdentifier>{9265da32-1566-4339-adc8-6291bf0a8edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\Video IO\VideoCapture">
+      <UniqueIdentifier>{819a5f78-70b7-44ce-b184-33b5a855da47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\Video IO\VideoWriter">
+      <UniqueIdentifier>{60c1b247-608c-4d61-8383-978ebf8756bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\DLL\framework.h">
@@ -141,6 +150,15 @@
     <ClInclude Include="Src\CV-Modules\DNN\Net\Net.h">
       <Filter>CV-Modules\DNN\Net</Filter>
     </ClInclude>
+    <ClInclude Include="Src\CV-Modules\VideoIO\VideoCapture\VideoCapture.h">
+      <Filter>CV-Modules\Video IO\VideoCapture</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\VideoIO\VideoWriter\VideoWriter.h">
+      <Filter>CV-Modules\Video IO\VideoWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\VideoIO\VideoIO.h">
+      <Filter>CV-Modules\Video IO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\DLL\dllmain.cpp">
@@ -193,6 +211,15 @@
     </ClCompile>
     <ClCompile Include="Src\CV-Modules\DNN\Blob\Blob.cpp">
       <Filter>CV-Modules\DNN\Blob</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\VideoIO\VideoCapture\VideoCapture.cpp">
+      <Filter>CV-Modules\Video IO\VideoCapture</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\VideoIO\VideoWriter\VideoWriter.cpp">
+      <Filter>CV-Modules\Video IO\VideoWriter</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\VideoIO\VideoIO.cpp">
+      <Filter>CV-Modules\Video IO</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

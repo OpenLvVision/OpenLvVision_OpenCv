@@ -1,0 +1,21 @@
+<p>The function getRectSubPix extracts pixels from src:</p>
+
+<div>{{< katex >}}$
+\texttt{patch}(x, y) =
+\texttt{src}\!\left(
+x + \texttt{center.x} - (\texttt{dst.cols}-1)\cdot 0.5,\;
+y + \texttt{center.y} - (\texttt{dst.rows}-1)\cdot 0.5
+\right)
+${{< /katex >}}</div>
+
+<p>
+Pixel values at non-integer coordinates are retrieved using bilinear interpolation.  
+Each channel of a multi-channel image is processed independently.
+</p>
+
+<p>
+The input image must be either single-channel or three-channel.  
+The center of the rectangle must lie inside the image, although parts of the rectangle may extend outside.
+</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#ga77576d06075c1a4b6ba1a608850cd614" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 

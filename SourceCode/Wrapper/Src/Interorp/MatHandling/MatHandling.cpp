@@ -1,4 +1,5 @@
 #include "MatHandling.h"
+#include "opencv2/imgproc.hpp"
 
 using namespace cv;
 using namespace lvi::mat;
@@ -130,9 +131,9 @@ cv::Mat lvi::mat::lvNchwMatToCvNchwMat(void* address, NchwMatInfo* matInfo)
     case lvi::mat::DataType::ArrayNchwDbl:
         return Mat(4, sizes, CV_64F, reinterpret_cast<double*>(address));
     case lvi::mat::DataType::ArrayNchwComplexSgl:
-        return Mat(4, sizes, CV_32FC2, reinterpret_cast<float*>(address));
+        return Mat(4, sizes, CV_32FC1, reinterpret_cast<float*>(address));
     case lvi::mat::DataType::ArrayNchwComplexDbl:
-        return Mat(4, sizes, CV_64FC2, reinterpret_cast<double*>(address));
+        return Mat(4, sizes, CV_64FC1, reinterpret_cast<double*>(address));
     default:
         throw std::runtime_error("Format not supported in lvMatToCvMat");
     }
@@ -150,5 +151,80 @@ Mat lvi::mat::lvDstMatToCvMat(Mat src, void* addressDst, MatInfo* matInfoDst)
     {
         //point to destination image
         return lvMatToCvMat(addressDst, matInfoDst);
+    }
+}
+
+ImageType lvi::mat::cvTypeToImageType(int cvType)
+{
+    switch (cvType)
+    {
+    case CV_8UC1:  return ImageType::MonoU8;
+    case CV_16UC1: return ImageType::MonoU16;
+    case CV_16SC1: return ImageType::MonoI16;
+    case CV_32FC1: return ImageType::MonoSgl;
+    case CV_8UC3:  return ImageType::ColorU32;
+    case CV_8UC4:  return ImageType::ColorU32;
+    case CV_16UC3: return ImageType::ColorU64;
+    case CV_16UC4: return ImageType::ColorU64;
+    case CV_32FC2: return ImageType::ComplexSgl;
+    default:       return ImageType::ColorU32;
+    }
+}
+
+void lvi::mat::getImageTypeProperties(DataType dt, int& channels, int& depth)
+{
+    switch (dt)
+    {
+    case DataType::ImageMonoU8:     channels = 1; depth = CV_8U;  break;
+    case DataType::ImageMonoU16:    channels = 1; depth = CV_16U; break;
+    case DataType::ImageMonoI16:    channels = 1; depth = CV_16S; break;
+    case DataType::ImageMonoSgl:    channels = 1; depth = CV_32F; break;
+    case DataType::ImageColorU32:   channels = 4; depth = CV_8U;  break;
+    case DataType::ImageColorU64:   channels = 4; depth = CV_16U; break;
+    case DataType::ImageComplexSgl: channels = 2; depth = CV_32F; break;
+    default: throw std::runtime_error("Unsupported image DataType");
+    }
+}
+
+int lvi::mat::getCvtColorCode(int srcChannels, int dstChannels)
+{
+    if (srcChannels == dstChannels) return -1;
+
+    if (srcChannels == 3 && dstChannels == 1) return cv::COLOR_BGR2GRAY;
+    if (srcChannels == 3 && dstChannels == 4) return cv::COLOR_BGR2BGRA;
+    if (srcChannels == 4 && dstChannels == 1) return cv::COLOR_BGRA2GRAY;
+    if (srcChannels == 4 && dstChannels == 3) return cv::COLOR_BGRA2BGR;
+    if (srcChannels == 1 && dstChannels == 3) return cv::COLOR_GRAY2BGR;
+    if (srcChannels == 1 && dstChannels == 4) return cv::COLOR_GRAY2BGRA;
+
+    throw std::runtime_error("Unsupported color conversion");
+}
+
+void lvi::mat::convertFrameToLvImage(const cv::Mat& src, cv::Mat& dst, DataType targetType)
+{
+    int dstChannels, dstDepth;
+    getImageTypeProperties(targetType, dstChannels, dstDepth);
+
+    const cv::Mat* current = &src;
+    cv::Mat temp;
+
+    // Step 1: Color conversion if channel count differs
+    int code = getCvtColorCode(src.channels(), dstChannels);
+    if (code >= 0)
+    {
+        cv::cvtColor(*current, temp, code);
+        current = &temp;
+    }
+
+    // Step 2: Depth conversion + copy into LV buffer
+    if (current->depth() != dstDepth)
+    {
+        cv::Mat converted;
+        current->convertTo(converted, CV_MAKETYPE(dstDepth, dstChannels));
+        converted.copyTo(dst);
+    }
+    else
+    {
+        current->copyTo(dst);
     }
 }

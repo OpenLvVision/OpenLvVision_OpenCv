@@ -92,6 +92,20 @@ namespace lvi
         };
 
         /**
+         * @brief Enum for LabVIEW image types.
+         */
+        enum class ImageType : uint32_t
+        {
+            MonoU8 = 0,
+            MonoU16 = 1,
+            MonoI16 = 2,
+            MonoSgl = 3,
+            ColorU32 = 4,
+            ColorU64 = 5,
+            ComplexSgl = 6,
+        };
+
+        /**
          * @brief Struct to pass array/image info from LabVIEW.
          */
         struct MatInfo
@@ -136,6 +150,27 @@ namespace lvi
          * @brief Selects either the source or destination Mat based on LV info.
          */
         cv::Mat lvDstMatToCvMat(cv::Mat src, void* addressDst, MatInfo* matInfoDst);
+
+        /**
+         * @brief Maps an OpenCV Mat type to the closest matching LV ImageType.
+         */
+        ImageType cvTypeToImageType(int cvType);
+
+        /**
+         * @brief Returns the target channel count and OpenCV depth for a given DataType.
+         */
+        void getImageTypeProperties(DataType dt, int& channels, int& depth);
+
+        /**
+         * @brief Returns the cvtColor conversion code for a channel change, or -1 if none needed.
+         */
+        int getCvtColorCode(int srcChannels, int dstChannels);
+
+        /**
+         * @brief Converts a source Mat to the target LV image format and copies into dst.
+         * Handles both color conversion (cvtColor) and depth conversion (convertTo).
+         */
+        void convertFrameToLvImage(const cv::Mat& src, cv::Mat& dst, DataType targetType);
 
     } // namespace mat
 

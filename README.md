@@ -40,10 +40,6 @@ The **Mat** type is reconstructed as closely as possible using malleable and pol
     * **`RNG` (Class & Funcs):**
         * `Create`, `Fill`, `Gaussian`, `Next`, `Read/Write State`, `Uniform` (Int/Float/Double), `Randn`, `RandShuffle`, `Randu`, `WriteRngSeed`
 
-* 🖼️**Image Processing**
-    * **`ImageFiltering`:** `Bilateralfilter`, `Blur`, `BoxFilter`, `Filter2d`, `GaussianBlur`, `GetDerivKernels`, `GetGaborKernel`, `GetGaussianKernel`, `Laplacian`, `MedianBlur`, `Dilate`, `Erode`, `GetStructuringElement`, `MorphologyDefaultBorderValue`, `MorphologyEx`, `PyrDown`, `PyrMeanShiftFiltering`, `PyrUp`, `Scharr`, `SepFilter2D`, `Sobel`, `SpatialGradient`, `SqrBoxFilter`
-    * **`ObjectDetection`:** `MatchTemplate`
-
 * 🧠**Deep Neural Network (DNN)**
     * **`Environment`:** `NmsBoxes`, `NmsBoxesRotated`, `GetAvailableBackends`, `GetAvailableTargets` *(x64 includes OpenVINO & CUDA backends)*
     * **`Net` (Class):**
@@ -54,8 +50,19 @@ The **Mat** type is reconstructed as closely as possible using malleable and pol
     * **`Blob` (Class):**
         * `Create`, `BlobFromImage`, `BlobFromImages`, `ReadInfo`, `ReadData`
 
+* 🖼️**Image Processing**
+    * **`ImageFiltering`:** `Bilateralfilter`, `Blur`, `BoxFilter`, `Filter2d`, `GaussianBlur`, `GetDerivKernels`, `GetGaborKernel`, `GetGaussianKernel`, `Laplacian`, `MedianBlur`, `Dilate`, `Erode`, `GetStructuringElement`, `MorphologyDefaultBorderValue`, `MorphologyEx`, `PyrDown`, `PyrMeanShiftFiltering`, `PyrUp`, `Scharr`, `SepFilter2D`, `Sobel`, `SpatialGradient`, `SqrBoxFilter`
+    * **`ObjectDetection`:** `MatchTemplate`
+
 * 💻**System**
-    * **`Hardware & Build`:** `CheckHardware`, `GetBuildInfos`, `GetNumThreads`, `GetVersion`, `SetNumThreads`
+    * **`Hardware & Build`:** `CheckHardware`, `GetBuildInfos`, `GetNumThreads`, `GetVersion`, `SetNumThrea
+
+* 🎥**Video I/O**
+   * **`VideoCapture` (Class):**
+     `Create`, `Dispose`, `Get`, `GetBackendName`, `Grab`, `IsOpened`, `OpenFile`, `OpenDevice` , `Read` , `Release` , `Retrive` , `Set`
+   * **`VideoWriter` (Class):**
+     `Create`, `Dispose`, `Get`, `GetBackendName`, `Open` , `Release` , `Retrive` , `Set`, `Write`
+
 ---
 
 ## 📥 Installation

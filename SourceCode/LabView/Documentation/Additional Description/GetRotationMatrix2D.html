@@ -1,0 +1,24 @@
+<p>The function calculates the following transformation matrix:</p>
+
+<div>{{< katex >}}$
+\begin{bmatrix}
+\alpha & \beta & (1-\alpha)\cdot \texttt{center.x} - \beta \cdot \texttt{center.y} \\
+-\beta & \alpha & \beta \cdot \texttt{center.x} + (1-\alpha)\cdot \texttt{center.y}
+\end{bmatrix}
+${{< /katex >}}</div>
+
+<p>where</p>
+
+<div>{{< katex >}}$
+\begin{aligned}
+\alpha &= \texttt{scale} \cdot \cos(\texttt{angle}) \\
+\beta  &= \texttt{scale} \cdot \sin(\texttt{angle})
+\end{aligned}
+${{< /katex >}}</div>
+
+<p>
+The transformation maps the rotation center to itself.  
+If this is not the desired behavior, adjust the translation (shift) terms accordingly.
+</p>
+
+<p><a href="https://docs.opencv.org/4.13.0/da/d54/group__imgproc__transform.html#gafbbc470ce83812914a70abfb604f4326" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p> 

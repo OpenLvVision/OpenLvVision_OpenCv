@@ -59,6 +59,10 @@
 		<Item Name="TemplateMatchModes.ctl" Type="VI" URL="../TypeDef/TemplateMatchModes.ctl"/>
 		<Item Name="TermCriteria.ctl" Type="VI" URL="../TypeDef/TermCriteria.ctl"/>
 		<Item Name="TermType.ctl" Type="VI" URL="../TypeDef/TermType.ctl"/>
+		<Item Name="VideoCaptureAPIs.ctl" Type="VI" URL="../TypeDef/VideoCaptureAPIs.ctl"/>
+		<Item Name="VideoCaptureProperties.ctl" Type="VI" URL="../TypeDef/VideoCaptureProperties.ctl"/>
+		<Item Name="VideoWriterProperties.ctl" Type="VI" URL="../TypeDef/VideoWriterProperties.ctl"/>
+		<Item Name="WarpPolarMode.ctl" Type="VI" URL="../TypeDef/WarpPolarMode.ctl"/>
 	</Item>
 	<Item Name="LvHelpers" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
@@ -463,6 +467,7 @@
 			<Item Name="RegisterDstMat_Type.vim" Type="VI" URL="../_LvHelpers/MatHandling/RegisterDstMat_Type.vim"/>
 			<Item Name="SwapWidthHeight.vi" Type="VI" URL="../_LvHelpers/MatHandling/SwapWidthHeight.vi"/>
 			<Item Name="RegisterDstMat_Size.vim" Type="VI" URL="../_LvHelpers/MatHandling/RegisterDstMat_Size.vim"/>
+			<Item Name="GetDstMatSize.vi" Type="VI" URL="../_LvHelpers/MatHandling/GetDstMatSize.vi"/>
 		</Item>
 		<Item Name="Assert" Type="Folder">
 			<Item Name="AssertArrayDimension" Type="Folder">
@@ -529,6 +534,7 @@
 			</Item>
 			<Item Name="AssertPoint" Type="Folder">
 				<Item Name="Assert2dPointI32.vi" Type="VI" URL="../_LvHelpers/Assert/AssertPoint/Assert2dPointI32.vi"/>
+				<Item Name="Assert2dPointSGL.vi" Type="VI" URL="../_LvHelpers/Assert/AssertPoint/Assert2dPointSGL.vi"/>
 			</Item>
 			<Item Name="AssertImage.vi" Type="VI" URL="../_LvHelpers/Assert/AssertImage.vi"/>
 			<Item Name="AssertAnything.vi" Type="VI" URL="../_LvHelpers/Assert/AssertAnything.vi"/>
@@ -775,8 +781,15 @@
 			<Item Name="MatchTemplate.vim" Type="VI" URL="../ImageProcessing/ObjectDetection/MatchTemplate.vim"/>
 		</Item>
 		<Item Name="GeometricImageTransformations" Type="Folder">
+			<Item Name="GetRectSubPix.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/GetRectSubPix.vim"/>
 			<Item Name="GetRotationMatrix2D.vi" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/GetRotationMatrix2D.vi"/>
 			<Item Name="WarpAffine.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/WarpAffine.vim"/>
+			<Item Name="GetAffineTransform.vi" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/GetAffineTransform.vi"/>
+			<Item Name="GetPerspectiveTransform.vi" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/GetPerspectiveTransform.vi"/>
+			<Item Name="WarpPerspective.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/WarpPerspective.vim"/>
+			<Item Name="WarpPolar.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/WarpPolar.vim"/>
+			<Item Name="Resize.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/Resize.vim"/>
+			<Item Name="InvertAffineTransform.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/InvertAffineTransform.vim"/>
 		</Item>
 	</Item>
 	<Item Name="System" Type="Folder">
@@ -786,5 +799,22 @@
 		<Item Name="GetNumThreads.vi" Type="VI" URL="../System/GetNumThreads.vi"/>
 		<Item Name="GetVersion.vi" Type="VI" URL="../System/GetVersion.vi"/>
 		<Item Name="SetNumThreads.vi" Type="VI" URL="../System/SetNumThreads.vi"/>
+	</Item>
+	<Item Name="Cuda" Type="Folder">
+		<Item Name="DataAccess" Type="Folder">
+			<Item Name="HostMem" Type="Folder"/>
+			<Item Name="GpuMat" Type="Folder"/>
+			<Item Name="Stream" Type="Folder"/>
+		</Item>
+		<Item Name="Device" Type="Folder"/>
+	</Item>
+	<Item Name="VideoIO" Type="Folder">
+		<Property Name="NI.SortType" Type="Int">0</Property>
+		<Item Name="VideoCapture.lvclass" Type="LVClass" URL="../VideoIO/VideoCapture/VideoCapture.lvclass"/>
+		<Item Name="VideoIO GetBackends.vi" Type="VI" URL="../VideoIO/VideoIO GetBackends.vi"/>
+		<Item Name="VideoIO GetCameraBackends.vi" Type="VI" URL="../VideoIO/VideoIO GetCameraBackends.vi"/>
+		<Item Name="VideoIO GetStreamBackends.vi" Type="VI" URL="../VideoIO/VideoIO GetStreamBackends.vi"/>
+		<Item Name="VideoIO GetWriterBackends.vi" Type="VI" URL="../VideoIO/VideoIO GetWriterBackends.vi"/>
+		<Item Name="VideoWriter.lvclass" Type="LVClass" URL="../VideoIO/VideoWriter/VideoWriter.lvclass"/>
 	</Item>
 </Library>
